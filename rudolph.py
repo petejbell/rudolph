@@ -1,5 +1,4 @@
 import secrets
-import terms
 import time
 from gpiozero import LED
 from twython import TwythonStreamer
