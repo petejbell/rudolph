@@ -9,6 +9,13 @@ TERMS = '#Christmas'
 # GPIO pin number of LED
 red = LED(16)
 
+# Blink on start
+for i in range(3):
+    red.on()
+    time.sleep(0.2)
+    red.off()
+    time.sleep(0.2)
+
 # Twitter application authentication
 APP_KEY = secrets.APP_KEY
 APP_SECRET = secrets.APP_SECRET
@@ -24,6 +31,7 @@ class BlinkyStreamer(TwythonStreamer):
             red.on()
             time.sleep(0.5)
             red.off()
+
 # Create streamer
 try:
     stream = BlinkyStreamer(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
